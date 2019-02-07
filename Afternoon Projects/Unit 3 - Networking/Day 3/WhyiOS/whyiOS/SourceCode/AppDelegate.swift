@@ -1,8 +1,9 @@
 //
 //  AppDelegate.swift
-//  WhyiOS
+//  whyiOS
 //
-//  Copyright © 2018 DevMtnStudent. All rights reserved.
+//  Created by Carlos Pendola on 2/6/19.
+//  Copyright © 2019 Carlos Pendola. All rights reserved.
 //
 
 import UIKit
