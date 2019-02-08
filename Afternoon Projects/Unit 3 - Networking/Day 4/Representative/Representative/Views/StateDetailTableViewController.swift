@@ -10,6 +10,7 @@ import UIKit
 
 class StateDetailTableViewController: UITableViewController {
     
+    var state: String?
     var representatives: [Representative] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -17,13 +18,13 @@ class StateDetailTableViewController: UITableViewController {
             }
         }
     }
-    var state: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        title = state
+       
         if let state = state {
+            title = state
             RepresentativeController.searchRepresentatives(forState: state) { (representatives) in
                 self.representatives = representatives
                 DispatchQueue.main.async {

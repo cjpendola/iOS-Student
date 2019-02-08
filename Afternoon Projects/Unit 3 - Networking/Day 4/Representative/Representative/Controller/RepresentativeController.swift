@@ -44,7 +44,13 @@ class RepresentativeController {
             do {
                 let resultsDictionary = try jsonDecoder.decode( [String: [Representative]].self, from: fixedData)
                 let repArray = resultsDictionary["results"]
-                completion(repArray ?? [])
+                
+                guard let newrepArray = repArray else {
+                    completion([])
+                    return
+                }
+                completion(newrepArray)
+                
             } catch {
                 print("Error decoding json: \(error.localizedDescription)")
                 completion([])
